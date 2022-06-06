@@ -1,11 +1,6 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import { convertUnixTimeToDate, getIconUrl } from '../helper/share';
 import { WeatherConditions } from '../model/Weather';
-import { getIconUrl } from '../services/WeatherService';
-
-const convertUnixTimeToDate = (unixUtc: number): Date => {
-  return new Date(unixUtc * 1000);
-};
 
 export const WeatherEntry = ({ weather }) => {
   const {

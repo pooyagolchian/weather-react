@@ -40,10 +40,6 @@ const readWeather = async (locationId: number): Promise<Weather[]> => {
   return current?.data;
 };
 
-export const getIconUrl = (code: string): string => {
-  return `http://openweathermap.org/img/wn/${code}.png`;
-};
-
 const readForecast = async (locationId: number): Promise<Weather[]> => {
   const forecast = await http.get<Weather[]>(
     `${ENV_CONFIG.WEATHER_API_URL}/forecast?id=${locationId}&${keyQuery}&units=metric&cnt=8`

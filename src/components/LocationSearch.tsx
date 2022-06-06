@@ -1,8 +1,5 @@
 import { useState } from 'react';
-
-interface LocationSearchProps {
-  onSearch: (search: string) => void;
-}
+import { LocationSearchProps } from '../model/Weather';
 
 export const LocationSearch = ({ onSearch }: LocationSearchProps) => {
   const [locationSearch, setLocationSearch] = useState('');
@@ -22,18 +19,18 @@ export const LocationSearch = ({ onSearch }: LocationSearchProps) => {
 
   return (
     <>
-      <div className="pb-2">
-        <div className="row">
+      <div className="col-12 pb-2">
+        <div className="d-flex flex-row">
           <input
             placeholder="Add locations"
-            className="col col-auto"
+            className="form-control d-flex"
             type="text"
             value={locationSearch}
             onChange={handleLocationSearch}
             onKeyPress={handleLocationSearch}
           />
           <button
-            className="btn btn-primary col col-auto mx-2"
+            className="btn btn-primary d-flex mx-2"
             onClick={addLocation}
             disabled={disableSearch}
             data-testid="search-btn"

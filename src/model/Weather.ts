@@ -8,12 +8,17 @@ export interface WeatherLocation {
   id: number;
   name: string;
 }
+[];
 
 export interface WeatherConditions {
   id: number;
   main: string;
   description: string;
   icon: string;
+}
+
+export interface LocationSearchProps {
+  onSearch: (search: string) => void;
 }
 
 export interface MainWeatherData {
@@ -30,3 +35,4 @@ export interface Weather {
   main: MainWeatherData;
   dt: number;
 }
+[];
