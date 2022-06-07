@@ -20,7 +20,13 @@ afterAll(() => server.close());
 
 describe("Weather functionality", () => {
   test("If search city and click on search location show on page", async () => {
-    render(<LocationSearch onSearch={MOCK_WEATHER} />);
+    render(
+      <LocationSearch
+        onSearch={() => {
+          MOCK_WEATHER;
+        }}
+      />
+    );
     expect(
       await screen.findByRole("button", { name: /Search/i })
     ).toBeDisabled();
